@@ -11,7 +11,7 @@ public class ToDoModel {
     @Column(name="id_todo", unique = true, nullable = false)
     private Long id;
 
-    @Column(name="id_list", nullable = false)
+    @Column(name="id_list")
     private Long idList;
 
     private String toDo;
@@ -63,5 +63,8 @@ public class ToDoModel {
     public void setFinish(Boolean finish) {
         this.finish = finish;
     }
+
+    
+
 
 }

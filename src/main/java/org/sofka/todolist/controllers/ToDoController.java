@@ -1,5 +1,6 @@
 package org.sofka.todolist.controllers;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.sofka.todolist.model.ToDoModel;
@@ -25,9 +26,19 @@ public class ToDoController {
         return this.toDoService.getToDoById(id);
     }
 
+    @GetMapping(path = "/list/{id}")
+    public Optional<List<ToDoModel>> getToDoByList(Long listId){
+        return toDoService.getToDoByList(listId);
+    }
+
     @PostMapping()
     public ToDoModel saveToDo(@RequestBody ToDoModel toDo){
-        return this.toDoService.saveToDo(toDo);
+        
+        String title = toDo.getToDo();
+        Long id = toDo.getIdList();
+        ToDoModel newToDo = new ToDoModel(id ,title);
+        
+        return this.toDoService.saveToDo(newToDo);
     }
 
     @PostMapping(path = "/{id}")

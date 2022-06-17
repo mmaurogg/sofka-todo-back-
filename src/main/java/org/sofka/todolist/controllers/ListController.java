@@ -1,11 +1,11 @@
 package org.sofka.todolist.controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.sofka.todolist.model.ListModel;
 import org.sofka.todolist.services.ListService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +28,9 @@ public class ListController {
 
     @PostMapping()
     public ListModel saveList(@RequestBody ListModel list){
-        return this.listService.saveList(list);
+        String title = list.getTitle();
+        ListModel newList = new ListModel(title);
+        return this.listService.saveList(newList);
     }
 
     @PostMapping(path = "/{id}")

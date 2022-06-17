@@ -24,7 +24,8 @@ public class ListModel {
     private Boolean finish;
 
     @OneToMany(mappedBy = "list")
-    private List<ToDoModel> items;
+    private List<ToDoModel> toDos;
+
 
     public ListModel() {
     }
@@ -34,7 +35,7 @@ public class ListModel {
         
         this.creation = new Date();
         this.finish = false;
-        this.items = new ArrayList<ToDoModel>();
+        //this.toDos = new ArrayList<ToDoModel>();
     }
 
     public Long getId() {
@@ -77,6 +78,13 @@ public class ListModel {
         this.finish = finish;
     }
 
+    public List<ToDoModel> getToDos() {
+        return toDos;
+    }
+
+    public void setToDos(List<ToDoModel> toDos) {
+        this.toDos = toDos;
+    }
 
 
 
