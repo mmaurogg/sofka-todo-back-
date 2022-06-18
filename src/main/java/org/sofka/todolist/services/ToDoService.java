@@ -1,7 +1,6 @@
 package org.sofka.todolist.services;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import org.sofka.todolist.model.ToDoModel;
