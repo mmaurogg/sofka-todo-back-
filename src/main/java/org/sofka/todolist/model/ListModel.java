@@ -1,11 +1,15 @@
 package org.sofka.todolist.model;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
 
+/**
+ * Modelos de bases de datos objetos para las listas
+ * @author Mauricio Gómez - mmaurogg@gmail.com
+ * @version 1.0.0 17 -junio 2022
+ */
 @Entity
 @Table(name = "list")
 public class ListModel {
@@ -23,7 +27,7 @@ public class ListModel {
 
     private Boolean finish;
 
-    @OneToMany(mappedBy = "list")
+    @OneToMany(mappedBy = "list", cascade = CascadeType.ALL)
     private List<ToDoModel> toDos;
 
 
@@ -32,10 +36,8 @@ public class ListModel {
 
     public ListModel(String title) {
         this.title = title;
-        
         this.creation = new Date();
         this.finish = false;
-        //this.toDos = new ArrayList<ToDoModel>();
     }
 
     public Long getId() {

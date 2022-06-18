@@ -9,6 +9,11 @@ import org.sofka.todolist.repositories.ListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Método para manipulación de la base de datos de las listas
+ * @author Mauricio Gómez - mmaurogg@gmail.com
+ * @version 1.0.0 17 -junio 2022
+ */
 @Service
 public class ListService {
     @Autowired

@@ -2,6 +2,11 @@ package org.sofka.todolist.model;
 
 import javax.persistence.*;
 
+/**
+ * Modelos de bases de datos objetos para los To Do
+ * @author Mauricio Gómez - mmaurogg@gmail.com
+ * @version 1.0.0 17 -junio 2022
+ */
 @Entity
 @Table(name = "todo_list")
 public class ToDoModel {

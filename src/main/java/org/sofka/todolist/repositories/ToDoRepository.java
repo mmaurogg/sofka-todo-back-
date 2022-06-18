@@ -1,16 +1,15 @@
 package org.sofka.todolist.repositories;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.sofka.todolist.model.ToDoModel;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+/**
+ * Método para acceso a la base de datos de los To Do
+ * @author Mauricio Gómez - mmaurogg@gmail.com
+ * @version 1.0.0 17 -junio 2022
+ */
 @Repository
 public interface ToDoRepository extends CrudRepository<ToDoModel, Long> {
 
-    //@Query(value = "SELECT * FROM todo_list WHERE id_list = ?", nativeQuery = true)
-    public abstract Optional<List<ToDoModel>> findByIdList(Long idList);
 }

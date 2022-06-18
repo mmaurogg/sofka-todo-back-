@@ -10,6 +10,11 @@ import org.sofka.todolist.repositories.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Método para manipulación de la base de datos de los To Do
+ * @author Mauricio Gómez - mmaurogg@gmail.com
+ * @version 1.0.0 17 -junio 2022
+ */
 @Service
 public class ToDoService {
     @Autowired
@@ -19,20 +24,12 @@ public class ToDoService {
         return (ArrayList<ToDoModel>) toDoRepository.findAll();
     }
 
-    public Optional<List<ToDoModel>> getByList(Long idList) {
-        return toDoRepository.findByIdList(idList);
-    }
-
     public ToDoModel saveToDo(ToDoModel toDo){
         return toDoRepository.save(toDo);
     }
 
     public Optional<ToDoModel> getToDoById(Long id){
         return toDoRepository.findById(id);
-    }
-
-    public Optional<List<ToDoModel>> getToDoByList(Long listId){
-        return toDoRepository.findByIdList(listId);
     }
 
     public Boolean updateToDo(Long id, ToDoModel toDo){

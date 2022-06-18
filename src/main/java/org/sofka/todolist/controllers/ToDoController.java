@@ -9,6 +9,11 @@ import org.sofka.todolist.services.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Clase controladora y endpoints para los To Do
+ * @author Mauricio Gómez - mmaurogg@gmail.com
+ * @version 1.0.0 17 -junio 2022
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/todo")
@@ -24,11 +29,6 @@ public class ToDoController {
     @GetMapping(path = "/{id}")
     public Optional<ToDoModel> getToDoId(@PathVariable("id") Long id){
         return this.toDoService.getToDoById(id);
-    }
-
-    @GetMapping(path = "/list/{id}")
-    public Optional<List<ToDoModel>> getToDoByList(Long listId){
-        return toDoService.getToDoByList(listId);
     }
 
     @PostMapping()
@@ -60,5 +60,7 @@ public class ToDoController {
             return "No pudo eliminar el ToDo con id" + id;
         }
     }
+
+    
 
 }

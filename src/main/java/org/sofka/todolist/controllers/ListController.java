@@ -1,7 +1,6 @@
 package org.sofka.todolist.controllers;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import org.sofka.todolist.model.ListModel;
@@ -9,6 +8,12 @@ import org.sofka.todolist.services.ListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
+/**
+ * Clase controladora y endpoints para las listas
+ * @author Mauricio Gómez - mmaurogg@gmail.com
+ * @version 1.0.0 17 -junio 2022
+ */
 @CrossOrigin
 @RestController
 @RequestMapping("/list")
